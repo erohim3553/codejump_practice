@@ -1,0 +1,231 @@
+/* 全体のスタイル */
+body {
+  margin: 0; /* ボディのマージンをリセット */
+}
+
+.u-wrapper {
+  margin-top: 0;
+}
+/* コンテンツ全体のスタイル */
+.container {
+  max-width: 960px; /* コンテンツの最大幅を960pxに設定 */
+  padding: 0 4%; /* 横のパディングを4%に設定 */
+  margin: 0 auto; /* 中央揃え */
+}
+/* ヘッダーのスタイル */
+.header-inner {
+  display: flex; /* Flexboxを使用 */
+  justify-content: space-between; /* 左右に配置 */
+  align-items: center; /* 縦方向の中央揃え */
+  position: relative; /* 相対位置を設定 */
+}
+.header-inner img {
+  width: 80px; /* アイコンのサイズを調整 */
+  height: auto; /* 高さは自動調整 */
+  padding: 10px; /* アイコンの周りに余白を追加 */
+  margin-left: 211px; /* 左から211pxの位置に設定 */
+}
+.nav {
+  margin-right: 211px; /* 右から211pxの位置に設定 */
+}
+#nav-li {
+  display: flex; /* リストを横並びにする */
+  list-style: none; /* デフォルトのリストスタイルを消す */
+  padding: 0; /* パディングを消す */
+  margin: 0; /* マージンを消す */
+}
+#nav-li li {
+  margin-left: 30px; /* リストアイテム間の間隔を30pxに設定 */
+}
+
+/* スマホ用のメディアクエリ */
+@media screen and (max-width: 480px) {
+  #nav-li {
+    flex-direction: column; /* 縦並びにする */
+    align-items: center; /* 中央揃え */
+  }
+  #nav-li li {
+    margin-left: 0; /* 左のマージンをリセット */
+    margin-bottom: 10px; /* アイテム間の下マージンを設定 */
+  }
+  .nav {
+    margin-right: 0; /* スマホでは右マージンをリセット */
+  }
+  .header-inner img {
+    margin-left: 15px; /* 左から15pxに設定 */
+  }
+  .nav {
+    margin-right: 15px; /* 右から15pxに設定 */
+  }
+  .header-inner {
+    justify-content: space-between; /* スペースを均等に */
+  }
+  .header-inner img,
+  .nav {
+    margin-left: 0; /* スマホではmarginをリセット */
+    margin-right: 0; /* スマホではmarginをリセット */
+  }
+  #nav-li {
+    margin-left: 100px; /* ロゴとナビ間の間隔を100pxに設定 */
+  }
+}
+/* メインビジュアルのスタイル */
+#mainphoto {
+  width: 100%; /* 幅を100%に設定 */
+  height: auto; /* 高さは自動調整 */
+}
+/* メインビジュアルの画像 */
+#mainphoto img {
+  width: 100%; /* 幅を100%に設定（親要素に合わせる） */
+  height: auto; /* 高さは自動調整 */
+  max-height: 600px; /* 最大高さを600pxに設定 */
+  object-fit: cover; /* 画像がはみ出さないように調整 */
+}
+
+/* PC表示用のスタイル */
+@media screen and (min-width: 601px) {
+  #mainphoto {
+    height: 600px; /* PC表示時は高さを600pxに固定 */
+  }
+}
+/* Aboutセクションのスタイル */
+h1 {
+  border-bottom: solid 1px #000; /* 下のボーダーのみを設定 */
+  width: 106px; /* ボーダーの幅を106pxに設定 */
+  margin: 80px auto 70px; /* 上下のマージンと左右のマージンを自動に設定 */
+  font-family: 'Hiragino Kaku Gothic ProN', sans-serif; /* フォントファミリーを設定 */
+  font-size: 32px; /* フォントサイズを32pxに設定 */
+  text-align: center; /* センター表示 */
+  display: block; /* 幅をテキストに合わせるためにblockに設定 */
+}
+.profile-container {
+  display: flex; /* Flexboxを使用 */
+  align-items: flex-start; /* 縦方向の上揃え */
+  justify-content: center; /* 横方向の中央揃え */
+  margin: 70px auto 100px; /* 上70px、下100pxのマージンを設定 */
+  flex-wrap: wrap; /* 子要素が親要素を超えた場合に折り返す */
+}
+#prophot {
+  width: 100px; /* 幅を100pxに設定 */
+  height: 100px; /* 高さを100pxに設定 */
+  border-radius: 50%; /* 丸くするためにボーダー半径を50%に設定 */
+  overflow: hidden; /* はみ出した部分を隠す */
+  margin-right: 20px; /* プロフィールブロックとの間隔を設定 */
+}
+#prophot img {
+  width: 100%; /* 幅を100%に設定（親要素に合わせる） */
+  height: auto; /* 高さは自動調整 */
+  display: block; /* ブロック要素にして余白を消す */
+}
+#problock {
+  display: flex; /* Flexboxを使用 */
+  flex-direction: column; /* 縦方向に配置 */
+  justify-content: center; /* 縦方向の中央揃え */
+  max-width: calc(100% - 120px); /* 画像の幅を引いた最大幅を設定 */
+}
+h2 {
+  font-weight: bold; /* 太字に設定 */
+  margin-bottom: 10px; /* 下のマージンを10pxに設定 */
+}
+/* 自転車セクションのスタイル */
+section {
+  margin: 100px 0 60px; /* 上100px、下60pxのマージンを設定 */
+}
+#bicphot {
+  display: flex; /* Flexboxを使用 */
+  justify-content: center; /* 中央揃え */
+  flex-wrap: wrap; /* 子要素が親要素を超えた場合に折り返す */
+}
+.bicycle-item {
+  width: 274.4px; /* 幅を274.4pxに設定 */
+  margin: 0 8.5px; /* 左右の間隔を8.5pxに設定（合計17px） */
+  text-align: center; /* 中央揃え */
+}
+.bicycle-item img {
+  width: 100%; /* 幅を100%に設定（親要素に合わせる） */
+  height: 182px; /* 高さを182pxに設定 */
+  object-fit: cover; /* 画像がはみ出さないように調整 */
+}
+.bicycle-item h3 {
+  margin-top: 10px; /* 上のマージンを10pxに設定 */
+  font-size: 18px; /* フォントサイズを調整 */
+}
+.bicycle-item p {
+  width: 170px; /* 幅を170pxに設定 */
+  margin: 10px auto; /* 上下のマージンを10pxに設定し、左右を自動で中央揃え */
+  font-size: 14px; /* フォントサイズを調整 */
+}
+
+/* スマホ用のメディアクエリ */
+@media screen and (max-width: 480px) {
+  .profile-container {
+    flex-direction: column; /* 縦方向に配置 */
+    align-items: center; /* 中央揃え */
+  }
+  /* ナビゲーションメニューの調整 */
+  #nav-li {
+    flex-direction: row; /* 横並び */
+    align-items: center; /* 中央揃え */
+    justify-content: space-between; /* 広げる */
+  }
+
+  #nav-li li {
+    margin: 10px; /* 上下左右の間隔を10pxに設定 */
+  }
+
+  .nav {
+    margin-right: 0; /* スマホでは右マージンをリセット */
+  }
+
+  /* メイン画像の調整 */
+  #mainphoto img {
+    width: 100%; /* 幅を100%に設定 */
+    height: auto; /* 高さは自動調整 */
+    max-height: 300px; /* スマホでは最大高さを300pxに設定 */
+    object-fit: cover; /* 画像がはみ出さないように調整 */
+  }
+
+  #prophot {
+    margin-bottom: 5px; /* 下に5pxのマージンを設定 */
+  }
+
+  /* テキストの見やすさの調整 */
+  h2 {
+    font-size: 24px; /* フォントサイズを調整 */
+  }
+  p {
+    font-size: 14px; /* フォントサイズを調整 */
+    line-height: 1.4; /* 行間を調整 */
+    width: 100%; /* 幅を100%に設定 */
+    margin: 5px 0 10px; /* 上5px、下10pxのマージンを設定 */
+  }
+  /* 自転車セクションの調整 */
+  #bicphot {
+    flex-direction: column; /* 縦並びにする */
+    align-items: center; /* 中央揃え */
+  }
+  .bicycle-item {
+    margin: 10px 0; /* 上下の間隔を10pxに設定 */
+  }
+  .bicycle-item p {
+    width: 100%; /* 幅を100%に設定 */
+  }
+}
+/* フッターのスタイル */
+footer {
+  text-align: center; /* センター表示 */
+  margin-top: 110px; /* 画像のテキストまで110pxのマージン */
+  padding: 20px 0; /* 上下のパディングを追加 */
+  background-color: none; /* 背景色を設定（必要に応じて） */
+}
+
+.copyright {
+  display: flex; /* Flexboxを使用 */
+  align-items: center; /* 中央揃え */
+  justify-content: center; /* 中央揃え */
+}
+
+small {
+  font-size: 14px; /* フォントサイズを設定 */
+  color: #333; /* テキストの色を設定 */
+}
