@@ -1,0 +1,250 @@
+@charset "utf-8";
+
+/* common */
+/* common */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic proN', 'メイリオ', sans-serif;
+  color: #555;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+/* コンテンツ最大横幅を940pxにした
+ マージン中央表示　レスポンシブの見やすさのためパディング調整 */
+.wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* common設定ここまで */
+
+/* ヘッダーの設定ここから */
+
+header {
+  border-top: 8px solid #8c6239;
+}
+
+.header_logo {
+  width: 90px;
+}
+
+/*ヘッダーを横並びにする　
+ロゴ　ナビをフレックス　align-itemsで垂直方向でセンター表示
+justify-contentで横並びを両端配置にする 
+さらにマージンの調整*/
+.header_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+
+/* navリストを横並びにする */
+header nav ul {
+  display: flex;
+}
+
+/* リストに間隔をつける */
+header nav ul li {
+  margin-left: 30px;
+}
+
+/* aタグ下のアンダーラインを消す 
+またテキストの色を変える*/
+header nav ul li a {
+  text-decoration: none;
+  color: #555;
+}
+
+/* マウスオーバー時のnav の色を変える */
+header nav ul li a:hover,
+header nav ul li a:active,
+header nav ul li.current a {
+  color: #8c6239;
+}
+
+/* メイン画像の設定
+画面の横幅は表示いっぱいの100％
+高さは表示領域の５０％ 
+ メイン画像のurl呼び出し
+ リピートさせない指示　
+画像をセンター指定する
+また画像が全体を覆うようにカバーを設定*/
+#main_image {
+  width: 100%;
+  height: 50vh;
+  background-image: url(../img/cafe.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* コンテンツのスタイリング
+メインとサイドバーを横並びにする　コンテンツを囲っていたdivに指定
+justify-contentで横並びを両端配置に
+マージントップで上下の余白を指定する
+
+ */
+.contents {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+/* コンテンツの中身の幅を指定する 
+<div class="contents wrapper">の中で
+<main id="main_content">を65％
+<aside id="sidebar">を31%になるようにする*/
+#main_content {
+  width: 65%;
+}
+#sidebar {
+  width: 31%;
+}
+/* メインコンテンツの見出しを装飾する
+お知らせ
+キャンペーン情報 
+まず余白を調整する
+bodyタグにidとしてhomeを設置しているのを利用する
+<body id="home">
+また見出しの下にボーダーラインをつけて
+1pxで色付き　見出しを強調する
+フォントサイズを 1.2remで設定*/
+#home h2 {
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #8c6239;
+  font-size: 1.2rem;
+}
+/* 次に　お知らせ　の中身をスタイリングする 
+dlに対して　display: flex;で中身を横並びにする
+このdlタグtaguは　 <section id="info">のid　infoのなかにある為
+下のように指定する
+また横並びで収まらない場合は改行するように  flex-wrap: wrap;を指示
+お知らせの各余白を  margin-bottom: 50px;で調整
+*/
+#info dl {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+/* お知らせの日付の部分の横幅のdtを調整する。
+emは文字サイズですが　この単位で指定するのは
+ブラウザを拡大縮小してもレイアウトが崩れないようにする 
+*/
+#info dt {
+  width: 7em;
+}
+
+/* お知らせの内容部分ddも
+横幅100％から7emを引いた値として設定する */
+#info dd {
+  width: calc(100% - 7em);
+}
+/* #info内の　dtタグ　ddタグ内の
+下の余白を調整する */
+#info dt,
+#info dd {
+  margin-bottom: 10px;
+}
+/* キャンペーンのスタイリング */
+/* お知らせの各li の余白をマージンボトムで調整
+セクションタグにID campaignを設定しているので利用する
+liの・を消すために  list-style-type: none;を指示 */
+
+#campaign ul li {
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+
+/* サイドバーの調整　id="sidebar"を利用する
+余白を調整　 
+liの・を消すために  list-style-type: none;を指示*/
+#sidebar ul li {
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+/* フッターのスタイリング */
+/* footerのマージンを調整 
+パディングを調整
+ text-align: center;で中央揃えに
+ 文字色と背景色を指示mojisyokutohaikeisyokuwosiji
+ */
+footer {
+  margin-top: 100px;
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  background-color: #a67c52;
+}
+/* リストul下の余白を調整 
+リストの文字サイズを指定*/
+footer ul {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+/* リストを横並びにする
+まずリストの各項目をインライブロックにする 
+ マージンで各項目の周りに余白を作る*/
+footer ul li {
+  display: inline-block;
+  margin: 5px;
+}
+/* aタグに指示を出して文字の指定をする */
+footer ul li a {
+  color: #fff;
+}
+/* aタグのリンクの下線を消す */
+footer ul li a:link {
+  text-decoration: none;
+}
+
+/* リンクにマウスオーバーした時の動作の指示
+オパシティを指示する */
+footer ul li a:hover,
+footer ul li a:active {
+  opacity: 0.7;
+}
+
+/* 著作権表示の文字の大きさの調整 */
+small {
+  font-size: 0.7em;
+}
+
+/* レスポンシブ対応　ここから */
+
+/* メディアクエリが 
+widthが600px以下で適用する
+文字サイズを87.5%にする*/
+@media (max-width: 600px) {
+  html {
+    font-size: 87.5%;
+  }
+  /* ロゴ画像 class="header_logo"の大きさを調整 */
+  .header_logo {
+    width: 60px;
+  }
+  /* サイドバーを縦並びにする
+  マージントップを調整 
+  */
+  .contents {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  /* メインコンテンツとサイドバーの横幅を100％にして余白を消す
+  <main id="main_content">
+   <aside id="sidebar">
+   を利用する */
+  #main_content,
+  #sidebar {
+    width: 100%;
+  }
+}
