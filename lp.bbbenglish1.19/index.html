@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BBB英会話スクール</title>
+    <meta
+      name="description"
+      content="テキストテキストテキストテキストテキストテキストテキストテキスト"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- GoogleのCDNよびだし -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery.inview.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+
+  <body>
+    <!-- ヘッダー記述ここから -->
+    <header id="header">
+      <!-- 表のロゴ設置 -->
+      <h1 class="site-title">
+        <a href="#"><img src="img/logo-r.svg" alt="BBB英会話スクール" /></a>
+      </h1>
+      <!-- ナビ記述 -->
+      <nav id="navi">
+        <!-- ハンバーガーメニューのロゴ記述 -->
+        <img class="logo" src="img/logo-w.svg" alt="BBB英会話スクール" />
+        <ul class="menu">
+          <li><a href="#reason">BBBが選ばれる理由</a></li>
+          <li><a href="#voice">受講生の声</a></li>
+          <li><a href="#summary">スクールの概要</a></li>
+        </ul>
+        <a class="btn" href="#">無料体験に申し込む</a>
+      </nav>
+
+      <!-- ハンバーガーメニューの記述 jQueryでメニューのオープン、クローズ-->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <!-- ヘッダー記述ここまで -->
+    <main>
+      <!-- メインビジュアル記述 -->
+      <div id="mainvisual">
+        <div class="text">
+          <p class="title">話して学ぼう！<br />BBB英会話スクール</p>
+          <a class="btn" href="#">無料体験はこちら</a>
+        </div>
+        <!-- メイビジュアルの画像３枚を設置 
+         CSSアニメーションを使用して3枚の画像を
+         フェードイン、フェードアウトで切り替え-->
+        <ul class="fade">
+          <li><img src="img/mainvisual1.jpg" alt="" /></li>
+          <li><img src="img/mainvisual2.jpg" alt="" /></li>
+          <li><img src="img/mainvisual3.jpg" alt="" /></li>
+        </ul>
+      </div>
+
+      <section id="reason">
+        <!-- BBBが選ばれる理由セクション記述 -->
+        <h2 class="section-title">BBBが選ばれる理由</h2>
+
+        <div class="bg">
+          <div class="slide inview-slide-left">
+            <!-- 左と右から keyframes の translateX を使用してスライドさせます。
+スライドは、要素が画面下に表示されたタイミングでjQueryのプラグイン「inview.js」を使用して実行します。 -->
+            <img src="img/icon-pc.png" alt="" />
+            <p>
+              <span class="title">オンライン対応</span>
+              <span class="text">24時間いつでも受講できる！</span>
+            </p>
+          </div>
+          <div class="slide inview-slide-right">
+            <img src="img/icon-teacher.png" alt="" />
+            <p>
+              <span class="title">講師はネイティブ</span>
+              <span class="text">お気に入りの講師が自自由に選べる！</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 受講生の声セクション記述 -->
+      <section id="voice" class="wrapper">
+        <h2 class="section-title">受講生の声</h2>
+        <!-- ふきだしの矢印は、疑似要素の border と transparent を使用
+         ふきだしの拡大表示は、
+         keyframes で scale と opacity を変化させることで表現
+         アニメーションの実行タイミングは、
+         上のスライドと同じく「inview.js」で実施 -->
+        <div class="item-left" inview-balloon>
+          <div class="student">
+            <img src="img/icon-student1.png" alt="" />
+            <p class="name">○○○さん<br />大学生</p>
+          </div>
+          <div class="balloon-text">
+            <p>
+              テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+              テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            </p>
+          </div>
+        </div>
+
+        <div class="item-right inview-balloon">
+          <div class="balloon-text">
+            <p>
+              テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+              テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            </p>
+          </div>
+          <div class="student">
+            <img src="img/icon-student2.png" alt="" />
+            <p class="name">○○○さん<br />会社員</p>
+          </div>
+        </div>
+
+        <div class="item-left inview-balloon">
+          <div class="student">
+            <img src="img/icon-student3.png" alt="" />
+            <p class="name">○○○さん<br />自営業</p>
+          </div>
+          <div class="balloon-text">
+            <p>
+              テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+              テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- スクールの概要のセクション記述
+ 背景のドット画像とanimationの設定 
+ 背景画像の動きは、 keyframes で background-position で表現
+animation で infinite を指定し、背景画像の動きを無限に繰り返す -->
+      <section id="summary">
+        <div class="wrapper">
+          <h2 class="section-title">スクールの概要</h2>
+          <!-- 概要をリストし中に　h3 pタグを記述する -->
+          <ul class="menu">
+            <li>
+              <h3 class="menu-title">
+                <span class="ja">レッスン内容</span>
+                <span class="en">LESSON</span>
+              </h3>
+              <p>
+                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              </p>
+            </li>
+            <li>
+              <h3 class="menu-title">
+                <span class="ja">料金プラン</span>
+                <span class="en">PRICE</span>
+              </h3>
+              <p>
+                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              </p>
+            </li>
+            <li>
+              <h3 class="menu-title">
+                <span class="ja">講師のご紹介</span>
+                <span class="en">TEACHER</span>
+              </h3>
+              <p>
+                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              </p>
+            </li>
+            <li>
+              <h3 class="menu-title">
+                <span class="ja">BBBのQ&A</span>
+                <span class="en">Q&A</span>
+              </h3>
+              <p>
+                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 無料体験申し込み
+      ボタンの記述
+      ホバー時に色を反転、赤枠線の白いボタンに変化させる。
+      ボタンの大きさ同じ、ホバー前にも赤枠線を設定しておく。 -->
+      <div id="entry" class="wrapper">
+        <p class="title">まずは無料で、BBBの英会話を試してみませんか？</p>
+        <p class="catchphrase">
+          今なら初月のレッスンを特別価格で受講できる割引クーポンをプレゼント！
+        </p>
+        <a class="btn" href="#">無料体験に申し込む</a>
+      </div>
+    </main>
+    <!-- メインここまで -->
+    <!-- フッターここから -->
+    <footer id="footer">
+      <!-- ulタグで全体を全体を囲み
+       liリ４つ作る
+       その各リスト内にul>liで pタグ　liを作成し
+       CSSで装飾する -->
+      <ul class="inner wrapper">
+        <!-- リスト１ -->
+        <li>
+          <p class="title">コース一覧</p>
+          <ul class="menu">
+            <li><a href="#">スタンダードプラン</a></li>
+            <li><a href="#">プレミアムプラン</a></li>
+            <li><a href="#">短期集中プラン</a></li>
+            <li><a href="#">日常英会話コース</a></li>
+            <li><a href="#">ビジネス英会話コース</a></li>
+          </ul>
+        </li>
+        <!-- リスト２ -->
+        <li>
+          <p class="title">講師紹介</p>
+          <ul class="menu">
+            <li><a href="#">講師について</a></li>
+            <li><a href="#">講師一覧</a></li>
+            <li><a href="#">講師を探す</a></li>
+          </ul>
+        </li>
+        <!-- リスト３ -->
+        <li>
+          <p class="title">会社情報</p>
+          <ul class="menu">
+            <li><a href="#">会社概要</a></li>
+            <li><a href="#">採用情報</a></li>
+          </ul>
+        </li>
+
+        <!-- リスト４ -->
+        <li>
+          <p class="title">BBBについて</p>
+          <ul class="menu">
+            <li><a href="#">よくあるご質問</a></li>
+            <li><a href="#">ご利用規約</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+          </ul>
+        </li>
+      </ul>
+      <p class="copyright">&copy; BBB English School</p>
+    </footer>
+  </body>
+</html>
